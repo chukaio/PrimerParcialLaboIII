@@ -170,7 +170,6 @@ function callbackServerModificar() {
                 }
             }
             spinner.hidden = true;
-            alert("Modificado exitosamente!");
         }
     }
 }
@@ -189,7 +188,6 @@ function callbackServerEliminar() {
                 }
             }
             spinner.hidden = true;
-            alert("Borrado exitosamente!");
         }
     }
 }
