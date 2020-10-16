@@ -42,6 +42,7 @@ function fillForm(e) {
     var formFechaFinal = document.getElementById("lFechaFinal");
     var formTurno = document.getElementsByName("Turno");
     var rowForm = document.getElementById("rowFromForm");
+    var cuatrimestreComboBox = document.getElementById("fcuatrimestre");
     rowForm.rowId = e.target.parentNode.id;
     formNombre.value = nombre;
     formCuatrimestre.value = cuatrimestre;
@@ -55,6 +56,7 @@ function fillForm(e) {
     }
     formTurno.value = turno;
     containerForm.hidden = false;
+    cuatrimestreComboBox.disabled = true;
 }
 
 function callbackServerFillTable() {
@@ -203,8 +205,7 @@ function modificar() {
     var route = "http://localhost:3000/editar";
     var params;
 
-    //cuatrimestre.enable = false;
-    if (nombre.value.length > 6 /*&& cuatrimestre.enable == false*/ && !isDateLessThanToday(fechaFinal.value) && (turno.value === "Mañana" || turno.value === "Noche")) {
+    if (nombre.value.length >= 6 && cuatrimestre.disabled == true && !isDateLessThanToday(fechaFinal.value) && (turno.value === "Mañana" || turno.value === "Noche")) {
         nombreToModify = nombre.value;
         cuatrimestreToModify = cuatrimestre.value;
         fechaFinalToModify = fechaFinal.value;
@@ -218,7 +219,7 @@ function modificar() {
         params = formatParams(verb, nombre, undefined, fechaFinal, turno);
         endPoint(verb, route, params, callbackServerModificar);
     } else {
-        if (nombre.value.length <= 6) {
+        if (nombre.value.length < 6) {
             nombre.className = "Error";
         }
         if (isDateLessThanToday(fechaFinal.value)) {
