@@ -1,0 +1,169 @@
+body {
+    position: relative;
+}
+
+
+/* --------------- */
+
+#spinner {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------- */
+
+.label {
+    font-weight: bold;
+}
+
+#formulario {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#containerForm {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 70%;
+    z-index: 5;
+    background-color: rgb(238, 238, 238);
+    width: 50%;
+    border-radius: 5px;
+    padding: 20px;
+    animation-name: overlay;
+    animation-duration: 2s;
+}
+
+@keyframes overlay {
+    from {
+        top: 0%;
+        left: 0%;
+        background-color: black;
+    }
+    to {
+        top: 25%;
+        left: 25%;
+        background-color: rgb(241, 241, 241);
+    }
+}
+
+.containerBtnClose {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btnClose {
+    background-color: red;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 5%;
+    box-shadow: 10px 10px 5px 0px rgb(194, 192, 192);
+}
+
+#btnClose:hover {
+    background-color: rgb(253, 106, 106);
+    color: white;
+}
+
+.sinError {
+    border: 1px solid black;
+}
+
+.Error {
+    border: 1px solid red;
+}
+
+input[type=button] {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    width: 25%;
+}
+
+input[type=text] {
+    height: 25px;
+    width: 70%;
+    margin-bottom: 5px;
+}
+
+#fcuatrimestre {
+    margin-bottom: 5px;
+}
+
+#radioNoche {
+    margin-bottom: 10px;
+}
+
+#lFechaFinal {
+    margin-bottom: 5px;
+}
+
+#containerFormBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btnEliminate {
+    background-color: red;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgb(194, 192, 192);
+}
+
+#btnEliminate:hover {
+    background-color: rgb(253, 106, 106);
+    color: white;
+}
+
+#btnModificar {
+    background-color: green;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgb(194, 192, 192);
+}
+
+#btnModificar:hover {
+    background-color: rgb(88, 136, 88);
+    color: white;
+}
+
+
+/* --------------- */
+
+#divTable {
+    position: relative;
+    z-index: 1;
+}
+
+table {
+    z-index: 1;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: rgb(19, 206, 175);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(224, 224, 224, 0.705);
+}
